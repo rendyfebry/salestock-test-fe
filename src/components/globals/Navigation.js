@@ -8,7 +8,7 @@ import './Navigation.css'
 class Navigation extends Component {
 	render() {
 		return (
-			<Navbar>
+			<Navbar fixedTop>
 				<Navbar.Header>
 					<Navbar.Brand>
 						<Link to="/">

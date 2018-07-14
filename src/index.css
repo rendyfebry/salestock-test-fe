@@ -1,5 +1,6 @@
 html {
 	font-size: 10px;
+	background-color: rgb(245, 245, 245);
 }
 
 body {
@@ -8,4 +9,5 @@ body {
 	font-family: sans-serif;
 	font-size: 1.4rem;
 	color: #4a4a4a;
+	background-color: rgb(245, 245, 245);
 }
