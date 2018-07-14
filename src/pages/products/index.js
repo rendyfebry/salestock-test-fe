@@ -1,84 +1,87 @@
 import React, { Component } from 'react'
-import { Grid, Row, Col, Image } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Grid, Row } from 'react-bootstrap'
 
 import Navigation from '../../components/globals/Navigation'
+import ProductItem from '../../components/products/ProductItem'
 
-class Promo extends Component {
+const productData = [
+	{
+		name: 'Aridatha Plain Drapped Midi Dress',
+		slug: 'aridatha-plain-drapped-midi-dress',
+		price: 155000,
+		category: 'dress',
+		images: [
+			'https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/f1f19d0b4f413388031408e47de8b0b8.jpg',
+		],
+	},
+	{
+		name: 'Zalifa Brukat Flare Mini Dress',
+		slug: 'zalifa-brukat-flare-mini-dress',
+		price: 155000,
+		category: 'dress',
+		images: [
+			'https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/0c0bf8024b8b627db756ddb1f050bee1.jpg',
+		],
+	},
+	{
+		name: 'Gyamaru Lace Drapped Mini Dress',
+		slug: 'gyamaru-lace-drapped-mini-dress',
+		price: 155000,
+		category: 'dress',
+		images: [
+			'https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/00cc30c2bcb967a9dbb87fe6f32e2e65.jpg',
+		],
+	},
+	{
+		name: 'Helsexia Plain V-Neck Mini Dress',
+		slug: 'helsexia-plain-v-neck-mini-dress',
+		price: 155000,
+		category: 'dress',
+		images: [
+			'https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/608d4411aad8d3eef5f35235a74bd0a7.jpg',
+		],
+	},
+	{
+		name: 'Foyuilzha Brukat Cape Mini Dress',
+		slug: 'foyuilzha-brukat-cape-mini-dress',
+		price: 155000,
+		category: 'dress',
+		images: [
+			'https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/11dfe4b4a43e83e6d49e8b2eea167491.jpg',
+		],
+	},
+	{
+		name: 'Elhepone Flowery Cold Shoulder Mini Dress',
+		slug: 'elhepone-flowery-cold-shoulder-mini-dress',
+		price: 155000,
+		category: 'dress',
+		images: [
+			'https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/fbd2b5a3a1e1bdbafe0a42a0c19f1509.jpg',
+		],
+	},
+]
+
+class Products extends Component {
+	get productList() {
+		const productList = productData.map(product => (
+			<ProductItem
+				name={product.name}
+				slug={product.slug}
+				price={product.price}
+				category={product.category}
+				images={product.images}
+			/>
+		))
+		return productList
+	}
+
 	render() {
 		return (
 			<div className="App">
 				<Navigation />
 				<div>
 					<Grid>
-						<Row className="show-grid">
-							<Col xs={12} md={4}>
-								<Image
-									src="https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/f1f19d0b4f413388031408e47de8b0b8.jpg"
-									responsive
-								/>
-								<h3>
-									<Link to="/products/elhepone-flowery-cold-shoulder-mini-dress">
-										Aridatha Plain Drapped Midi Dress
-									</Link>
-								</h3>
-							</Col>
-							<Col xs={12} md={4}>
-								<Image
-									src="https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/0c0bf8024b8b627db756ddb1f050bee1.jpg"
-									responsive
-								/>
-								<h3>
-									<Link to="/products/elhepone-flowery-cold-shoulder-mini-dress">
-										Zalifa Brukat Flare Mini Dress
-									</Link>
-								</h3>
-							</Col>
-							<Col xs={12} md={4}>
-								<Image
-									src="https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/00cc30c2bcb967a9dbb87fe6f32e2e65.jpg"
-									responsive
-								/>
-								<h3>
-									<Link to="/products/elhepone-flowery-cold-shoulder-mini-dress">
-										Gyamaru Lace Drapped Mini Dress
-									</Link>
-								</h3>
-							</Col>
-							<Col xs={12} md={4}>
-								<Image
-									src="https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/608d4411aad8d3eef5f35235a74bd0a7.jpg"
-									responsive
-								/>
-								<h3>
-									<Link to="/products/elhepone-flowery-cold-shoulder-mini-dress">
-										Helsexia Plain V-Neck Mini Dress
-									</Link>
-								</h3>
-							</Col>
-							<Col xs={12} md={4}>
-								<Image
-									src="https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/11dfe4b4a43e83e6d49e8b2eea167491.jpg"
-									responsive
-								/>
-								<h3>
-									<Link to="/products/elhepone-flowery-cold-shoulder-mini-dress">
-										Foyuilzha Brukat Cape Mini Dress
-									</Link>
-								</h3>
-							</Col>
-							<Col xs={12} md={4}>
-								<Image
-									src="https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/fbd2b5a3a1e1bdbafe0a42a0c19f1509.jpg"
-									responsive
-								/>
-								<h3>
-									<Link to="/products/elhepone-flowery-cold-shoulder-mini-dress">
-										Elhepone Flowery Cold Shoulder Mini Dress
-									</Link>
-								</h3>
-							</Col>
-						</Row>
+						<Row className="show-grid">{this.productList}</Row>
 					</Grid>
 				</div>
 			</div>
@@ -86,4 +89,4 @@ class Promo extends Component {
 	}
 }
 
-export default Promo
+export default Products
