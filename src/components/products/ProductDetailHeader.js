@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Image } from 'react-bootstrap'
 
 class ProductDetailHeader extends Component {
 	super(props) {
@@ -17,7 +16,7 @@ class ProductDetailHeader extends Component {
 	render() {
 		return (
 			<div>
-				<Image src={this.mainImage} className="ProductDetail__image" />
+				<img src={this.mainImage} className="ProductDetail__image" alt={this.props.name} />
 				<h3 className="ProductDetail__title">{this.props.name}</h3>
 				<p className="ProductDetail__price">{this.priceFormated}</p>
 			</div>

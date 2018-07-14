@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table } from 'react-bootstrap'
+import { Table } from 'reactstrap'
 
 class ProductDetailSize extends Component {
 	render() {

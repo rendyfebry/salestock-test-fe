@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Row } from 'react-bootstrap'
+import { Container, Row } from 'reactstrap'
 
 import ProductDetail from '../../components/products/ProductDetail'
 
@@ -18,11 +18,11 @@ class ProductSingle extends Component {
 	render() {
 		return (
 			<div className="ProductSingle">
-				<Grid>
+				<Container>
 					<Row>
 						<ProductDetail {...productData} />
 					</Row>
-				</Grid>
+				</Container>
 			</div>
 		)
 	}
