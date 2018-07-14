@@ -32,3 +32,16 @@
 		transform: rotate(360deg);
 	}
 }
+
+.btn-red {
+	border-width: 0.1rem !important;
+	border-style: solid !important;
+	border-color: transparent rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.28) !important;
+	border-radius: 0.2rem !important;
+	background-color: rgb(215, 60, 60) !important;
+	background-image: linear-gradient(rgb(241, 86, 86) 0%, rgb(215, 60, 60) 100%) !important;
+	box-shadow: rgba(0, 0, 0, 0.08) 0px 0.1rem 0.1rem !important;
+	color: #ffffff !important;
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, 0.08) -0.1rem -0.1rem;
+}

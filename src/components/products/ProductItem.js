@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Col, Image } from 'react-bootstrap'
+import { Col, Image, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 import './ProductItem.css'
@@ -23,6 +23,18 @@ class ProductItem extends Component {
 						<Link to={`/products/${this.props.slug}`}>{this.props.name}</Link>
 					</h3>
 					<p className="ProductItem__price">{this.props.price}</p>
+					<hr />
+					<div class="ProductItem__footer">
+						<div>
+							<span>Like</span>
+						</div>
+						<div>
+							<span>Share</span>
+						</div>
+						<div className="ProductItem__footer-buttonArea">
+							<Button className="btn-red">Buy</Button>
+						</div>
+					</div>
 				</div>
 			</Col>
 		)
