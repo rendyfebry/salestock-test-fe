@@ -17,9 +17,9 @@ class ProductDetailHeader extends Component {
 	render() {
 		return (
 			<div>
-				<Image src={this.mainImage} responsive />
-				<h3>{this.props.name}</h3>
-				<p>{this.priceFormated}</p>
+				<Image src={this.mainImage} className="ProductDetail__image" />
+				<h3 className="ProductDetail__title">{this.props.name}</h3>
+				<p className="ProductDetail__price">{this.priceFormated}</p>
 			</div>
 		)
 	}

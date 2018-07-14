@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-import { Grid, Row, Col } from 'react-bootstrap'
+import { Grid, Row } from 'react-bootstrap'
 
-import ProductDetailHeader from '../../components/products/ProductDetailHeader'
-import ProductDetailColors from '../../components/products/ProductDetailColors'
-import ProductDetailSize from '../../components/products/ProductDetailSize'
-import ProductDetailExtra from '../../components/products/ProductDetailExtra'
+import ProductDetail from '../../components/products/ProductDetail'
 
 const productData = {
 	name: 'Elhepone Flowery Cold Shoulder Mini Dress',
@@ -23,17 +20,7 @@ class ProductSingle extends Component {
 			<div className="ProductSingle">
 				<Grid>
 					<Row>
-						<Col xs={12} md={6} mdOffset={3}>
-							<ProductDetailHeader
-								name={productData.name}
-								images={productData.images}
-								price={productData.price}
-							/>
-							<hr />
-							<ProductDetailColors colors={productData.colors} />
-							<ProductDetailSize />
-							<ProductDetailExtra />
-						</Col>
+						<ProductDetail {...productData} />
 					</Row>
 				</Grid>
 			</div>
