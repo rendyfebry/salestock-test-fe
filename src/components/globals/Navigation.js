@@ -20,9 +20,6 @@ class Navigation extends Component {
 					<li role="presentation">
 						<Link to="/products">Products</Link>
 					</li>
-					<li role="presentation">
-						<Link to="/help">Help</Link>
-					</li>
 					<NavDropdown eventKey={3} title="Hi, Rendy" id="basic-nav-dropdown">
 						<li role="presentation">
 							<Link to="/profile">Profile</Link>
