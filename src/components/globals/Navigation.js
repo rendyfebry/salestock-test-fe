@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavDropdown, MenuItem } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, MenuItem, Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import logo from '../../salestock-logo.png'
+
+import './Navigation.css'
 
 class Navigation extends Component {
 	render() {
@@ -8,7 +11,9 @@ class Navigation extends Component {
 			<Navbar>
 				<Navbar.Header>
 					<Navbar.Brand>
-						<Link to="/">SaleStock</Link>
+						<Link to="/">
+							<Image src={logo} responsive alt="Salestock Logo" />
+						</Link>
 					</Navbar.Brand>
 				</Navbar.Header>
 				<Nav pullRight>
