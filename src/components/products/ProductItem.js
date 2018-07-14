@@ -10,11 +10,20 @@ class ProductItem extends Component {
 	super(props) {
 		this.props = props
 	}
+
+	get productSlug() {
+		return `/products/${this.props.slug}`
+	}
+
+	get formattedPrice() {
+		return this.props.price.toLocaleString('id')
+	}
+
 	render() {
 		return (
 			<Col xs={12} md={4}>
 				<div className="ProductItem__wrapper">
-					<Link to={`/products/${this.props.slug}`}>
+					<Link to={this.productSlug}>
 						<Image
 							src={this.props.images[0]}
 							responsive
@@ -24,7 +33,7 @@ class ProductItem extends Component {
 					<h3 className="ProductItem__title">
 						<Link to={`/products/${this.props.slug}`}>{this.props.name}</Link>
 					</h3>
-					<p className="ProductItem__price">{this.props.price}</p>
+					<p className="ProductItem__price">{this.formattedPrice}</p>
 					<hr />
 					<div class="ProductItem__footer">
 						<div className="ProductItem__footer">
