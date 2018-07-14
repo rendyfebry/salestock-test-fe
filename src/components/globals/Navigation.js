@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Navbar, Nav, NavDropdown, MenuItem, Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import logo from '../../salestock-logo.png'
+import logo from '../../assets/images/salestock-logo.png'
 
 import './Navigation.css'
 
