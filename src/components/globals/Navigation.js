@@ -18,7 +18,7 @@ class Navigation extends Component {
 				</Navbar.Header>
 				<Nav pullRight>
 					<li role="presentation">
-						<Link to="/promo">Promo</Link>
+						<Link to="/products">Products</Link>
 					</li>
 					<li role="presentation">
 						<Link to="/help">Help</Link>
