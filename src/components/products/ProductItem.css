@@ -1,0 +1,29 @@
+.ProductItem__wrapper {
+	background-color: #ffffff;
+	text-align: left;
+	padding: 0.5rem;
+	margin-bottom: 3rem;
+	border-radius: 0.2rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 0.1rem, rgba(0, 0, 0, 0.12) 0px 0.1rem 0.2rem;
+}
+
+.ProductItem__image {
+	margin-bottom: 1rem;
+	border-radius: 0.2rem 0.2rem 0 0;
+}
+
+.ProductItem__title {
+	font-size: 1.4rem;
+	margin: 0;
+	margin-bottom: 0.5rem;
+	font-weight: 400;
+}
+
+.ProductItem__title a {
+	color: rgb(31, 31, 33);
+}
+
+.ProductItem__price {
+	margin: 0;
+	font-weight: 700;
+}
