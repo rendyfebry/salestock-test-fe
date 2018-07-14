@@ -16,10 +16,7 @@ const App = () => (
 			<Navigation />
 			<div>
 				<Route exact path="/" component={Home} />
-				<Route
-					path="/products/elhepone-flowery-cold-shoulder-mini-dress"
-					component={ProductSingle}
-				/>
+				<Route path="/products/:slug" component={ProductSingle} />
 				<Route exact path="/products" component={Products} />
 				<Route exact path="/profile" component={Profile} />
 				<Route exact path="/settings" component={Settings} />
