@@ -1,5 +1,5 @@
 html {
-	font-size: 10px;
+	/* font-size: 10px; */
 	background-color: rgb(245, 245, 245);
 }
 
@@ -7,7 +7,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: system, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, Sans-serif;
-	font-size: 1.4rem;
+	/* font-size: 1.4rem; */
 	color: #4a4a4a;
 	background-color: rgb(245, 245, 245);
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Col } from 'react-bootstrap'
+import { Col } from 'reactstrap'
 
 import './ProductDetail.css'
 
@@ -15,7 +15,7 @@ class ProductDetail extends Component {
 
 	render() {
 		return (
-			<Col xs={12} md={6} mdOffset={3}>
+			<Col xs={12} md={{ size: 6, offset: 3 }}>
 				<div className="ProductDetail__wrapper">
 					<ProductDetailHeader
 						name={this.props.name}

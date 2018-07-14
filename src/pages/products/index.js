@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Row } from 'react-bootstrap'
+import { Container, Row } from 'reactstrap'
 
 import ProductItem from '../../components/products/ProductItem'
 
@@ -63,13 +63,7 @@ const productData = [
 class Products extends Component {
 	get productList() {
 		const productList = productData.map(product => (
-			<ProductItem
-				name={product.name}
-				slug={product.slug}
-				price={product.price}
-				category={product.category}
-				images={product.images}
-			/>
+			<ProductItem {...product} key={product.slug} />
 		))
 		return productList
 	}
@@ -77,11 +71,9 @@ class Products extends Component {
 	render() {
 		return (
 			<div className="Products">
-				<div>
-					<Grid>
-						<Row className="show-grid">{this.productList}</Row>
-					</Grid>
-				</div>
+				<Container>
+					<Row className="show-grid">{this.productList}</Row>
+				</Container>
 			</div>
 		)
 	}

@@ -1,37 +1,64 @@
-import React, { Component } from 'react'
-import { Navbar, Nav, NavDropdown, MenuItem, Image } from 'react-bootstrap'
+import React from 'react'
+import {
+	Collapse,
+	Container,
+	Navbar,
+	NavbarToggler,
+	NavbarBrand,
+	Nav,
+	NavItem,
+	UncontrolledDropdown,
+	DropdownToggle,
+	DropdownMenu,
+	DropdownItem,
+} from 'reactstrap'
 import { Link } from 'react-router-dom'
-import logo from '../../assets/images/salestock-logo.png'
 
+import logo from '../../assets/images/salestock-logo.png'
 import './Navigation.css'
 
-class Navigation extends Component {
+class Navigation extends React.Component {
+	constructor(props) {
+		super(props)
+
+		this.toggle = this.toggle.bind(this)
+		this.state = { isOpen: false }
+	}
+	toggle() {
+		this.setState({ isOpen: !this.state.isOpen })
+	}
 	render() {
 		return (
-			<Navbar fixedTop>
-				<Navbar.Header>
-					<Navbar.Brand>
-						<Link to="/">
-							<Image src={logo} responsive alt="Salestock Logo" />
-						</Link>
-					</Navbar.Brand>
-				</Navbar.Header>
-				<Nav pullRight>
-					<li role="presentation">
-						<Link to="/products">Products</Link>
-					</li>
-					<NavDropdown eventKey={3} title="Hi, Rendy" id="basic-nav-dropdown">
-						<li role="presentation">
-							<Link to="/profile">Profile</Link>
-						</li>
-						<li role="presentation">
-							<Link to="/settings">Settings</Link>
-						</li>
-						<MenuItem divider />
-						<MenuItem eventKey={3.3}>Log Out</MenuItem>
-					</NavDropdown>
-				</Nav>
-			</Navbar>
+			<div>
+				<Navbar color="light" light expand="md" fixed="top">
+					<Container>
+						<NavbarBrand href="/">
+							<img src={logo} alt="Salestock logo" />
+						</NavbarBrand>
+						<NavbarToggler onClick={this.toggle} />
+						<Collapse isOpen={this.state.isOpen} navbar>
+							<Nav className="ml-auto" navbar>
+								<NavItem>
+									<Link to="/products" className="nav-link">
+										Products
+									</Link>
+								</NavItem>
+								<UncontrolledDropdown nav inNavbar>
+									<DropdownToggle nav caret>
+										Hi, Rendy
+									</DropdownToggle>
+									<DropdownMenu right>
+										<DropdownItem>Profile</DropdownItem>
+										<DropdownItem>Settings</DropdownItem>
+										<DropdownItem divider />
+										<DropdownItem>Logout</DropdownItem>
+									</DropdownMenu>
+								</UncontrolledDropdown>
+							</Nav>
+						</Collapse>
+					</Container>
+				</Navbar>
+			</div>
 		)
 	}
 }

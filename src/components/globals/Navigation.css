@@ -1,8 +1,13 @@
-.navbar-default .navbar-brand {
-	padding-top: 5px;
-	padding-bottom: 5px;
+.navbar-brand {
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 .navbar-brand img {
 	height: 40px;
+}
+
+.navbar-light.bg-light {
+	background: linear-gradient(0deg, rgb(179, 179, 179), rgb(179, 179, 179) 49%, transparent 51%)
+		center bottom / 100% 0.1rem no-repeat rgb(255, 255, 255);
 }
