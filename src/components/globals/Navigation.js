@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, MenuItem } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 class Navigation extends Component {
 	render() {
@@ -7,19 +8,23 @@ class Navigation extends Component {
 			<Navbar>
 				<Navbar.Header>
 					<Navbar.Brand>
-						<a href="#home">SaleStock</a>
+						<Link to="/">SaleStock</Link>
 					</Navbar.Brand>
 				</Navbar.Header>
 				<Nav pullRight>
-					<NavItem eventKey={1} href="#">
-						Promo
-					</NavItem>
-					<NavItem eventKey={2} href="#">
-						Help
-					</NavItem>
+					<li role="presentation">
+						<Link to="/promo">Promo</Link>
+					</li>
+					<li role="presentation">
+						<Link to="/help">Help</Link>
+					</li>
 					<NavDropdown eventKey={3} title="Hi, Rendy" id="basic-nav-dropdown">
-						<MenuItem eventKey={3.1}>Profile</MenuItem>
-						<MenuItem eventKey={3.2}>Settings</MenuItem>
+						<li role="presentation">
+							<Link to="/profile">Profile</Link>
+						</li>
+						<li role="presentation">
+							<Link to="/settings">Settings</Link>
+						</li>
 						<MenuItem divider />
 						<MenuItem eventKey={3.3}>Log Out</MenuItem>
 					</NavDropdown>
