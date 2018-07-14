@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col, Image, Table } from 'react-bootstrap'
 
-import Navigation from '../../components/globals/Navigation'
-
 class ProductSingle extends Component {
 	render() {
 		return (
 			<div className="ProductSingle">
-				<Navigation />
 				<Grid>
 					<Row>
 						<Col xs={12} md={6} mdOffset={3}>

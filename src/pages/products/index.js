@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Row } from 'react-bootstrap'
 
-import Navigation from '../../components/globals/Navigation'
 import ProductItem from '../../components/products/ProductItem'
 
 const productData = [
@@ -77,8 +76,7 @@ class Products extends Component {
 
 	render() {
 		return (
-			<div className="App">
-				<Navigation />
+			<div className="Products">
 				<div>
 					<Grid>
 						<Row className="show-grid">{this.productList}</Row>

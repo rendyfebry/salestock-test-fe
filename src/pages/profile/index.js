@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 
 import logo from '../../logo.svg'
-import Navigation from '../../components/globals/Navigation'
 
 class Profile extends Component {
 	render() {
 		return (
-			<div className="App">
-				<Navigation />
+			<div className="Profile">
 				<header className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
 					<h1 className="App-title">Profile</h1>
