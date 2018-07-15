@@ -29,10 +29,6 @@ const defaultProps = {
 }
 
 class ProductItem extends Component {
-	super(props) {
-		this.props = props
-	}
-
 	get productSlug() {
 		return `/products/${this.props.slug}`
 	}

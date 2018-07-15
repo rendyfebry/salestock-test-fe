@@ -3,14 +3,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 const propTypes = {
-	color: PropTypes.arrayOf(PropTypes.string).isRequired,
+	color: PropTypes.arrayOf(PropTypes.string),
 }
 
 class ProductItemColors extends Component {
-	super(props) {
-		this.props = props
-	}
-
 	render() {
 		return (
 			<div>
@@ -20,6 +16,6 @@ class ProductItemColors extends Component {
 	}
 }
 
-ProductItemColors.PropTypes = propTypes
+ProductItemColors.propTypes = propTypes
 
 export default ProductItemColors

@@ -23,6 +23,6 @@ class ProductItemSizeRow extends Component {
 	}
 }
 
-ProductItemSizeRow.PropTypes = propTypes
+ProductItemSizeRow.propTypes = propTypes
 
 export default ProductItemSizeRow
