@@ -1,10 +1,32 @@
 import React, { Component } from 'react'
-import { Col, Button } from 'reactstrap'
+import PropTypes from 'prop-types'
+import { Col } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
-import iconShare from '../../assets/images/icon-share-grey.png'
-import iconHeart from '../../assets/images/icon-heart-grey.png'
+import ProductItemColors from './ProductItemColors'
+import ProductItemSize from './ProductItemSize'
+import ProductItemExtra from './ProductItemExtra'
+import ProductItemFooter from './ProductItemFooter'
+
 import './ProductItem.css'
+
+const propTypes = {
+	name: PropTypes.string.isRequired,
+	slug: PropTypes.string.isRequired,
+	price: PropTypes.number.isRequired,
+	images: PropTypes.arrayOf(PropTypes.string).isRequired,
+	categories: PropTypes.arrayOf(PropTypes.string),
+	colors: PropTypes.arrayOf(PropTypes.string),
+	sizes: PropTypes.arrayOf(PropTypes.object),
+	isSinglePage: PropTypes.bool,
+}
+
+const defaultProps = {
+	categories: [],
+	colors: [],
+	sizes: [],
+	isSinglePage: false,
+}
 
 class ProductItem extends Component {
 	super(props) {
@@ -15,45 +37,76 @@ class ProductItem extends Component {
 		return `/products/${this.props.slug}`
 	}
 
-	get formattedPrice() {
-		return this.props.price.toLocaleString('id')
+	get imageSection() {
+		const ImageSection = this.props.isSinglePage ? (
+			<img
+				src={this.props.images[0]}
+				className="ProductItem__image single"
+				alt={this.props.name}
+			/>
+		) : (
+			<Link to={this.productSlug}>
+				{
+					<img
+						src={this.props.images[0]}
+						className="ProductItem__image"
+						alt={this.props.name}
+					/>
+				}
+			</Link>
+		)
+
+		return ImageSection
+	}
+
+	get headerSection() {
+		const formattedPrice = this.props.price.toLocaleString('id')
+		const HeaderSection = this.props.isSinglePage ? (
+			<div>
+				<h3 className="ProductItem__title single">{this.props.name}</h3>
+				<p className="ProductItem__price single">{formattedPrice}</p>
+				<hr />
+			</div>
+		) : (
+			<div>
+				<h3 className="ProductItem__title">
+					<Link to={`/products/${this.props.slug}`}>{this.props.name}</Link>
+				</h3>
+				<p className="ProductItem__price">{formattedPrice}</p>
+				<hr />
+			</div>
+		)
+
+		return HeaderSection
+	}
+
+	get descriptionSection() {
+		const DescriptionSection = this.props.isSinglePage ? (
+			<div>
+				<ProductItemColors colors={this.props.colors} />
+				<ProductItemSize sizes={this.props.sizes} />
+				<ProductItemExtra />
+				<hr />
+			</div>
+		) : null
+		return DescriptionSection
 	}
 
 	render() {
 		return (
-			<Col xs={12} md={4}>
+			<Col xs={12} md={this.props.isSinglePage ? { size: 6, offset: 3 } : 4}>
 				<div className="ProductItem__wrapper">
-					<Link to={this.productSlug}>
-						<img
-							src={this.props.images[0]}
-							className="ProductItem__image"
-							alt={this.props.name}
-						/>
-					</Link>
-					<h3 className="ProductItem__title">
-						<Link to={`/products/${this.props.slug}`}>{this.props.name}</Link>
-					</h3>
-					<p className="ProductItem__price">{this.formattedPrice}</p>
-					<hr />
-					<div className="ProductItem__footer">
-						<div className="ProductItem__footer">
-							<img src={iconHeart} alt="Like" />
-							<span>Like</span>
-						</div>
-						<div className="ProductItem__footer">
-							<img src={iconShare} alt="Share" />
-							<span>Share</span>
-						</div>
-						<div className="ProductItem__footer-buttonArea">
-							<Button className="btn-red" size="sm" color="danger">
-								Buy
-							</Button>
-						</div>
-					</div>
+					{this.imageSection}
+					{this.headerSection}
+					{this.descriptionSection}
+					<ProductItemFooter />
 				</div>
 			</Col>
 		)
 	}
 }
+
+ProductItem.propTypes = propTypes
+ProductItem.defaultProps = defaultProps
 
 export default ProductItem

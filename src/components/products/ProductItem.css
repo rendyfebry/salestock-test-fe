@@ -10,12 +10,11 @@
 .ProductItem__image {
 	margin-bottom: 1rem;
 	border-radius: 0.2rem 0.2rem 0 0;
-	max-width: 100%;
+	width: 100%;
 }
 
 .ProductItem__title {
 	font-size: 1rem;
-	margin: 0 0.5rem 0.25rem 0.5rem;
 	font-weight: 400;
 }
 
@@ -27,14 +26,23 @@
 	white-space: nowrap;
 }
 
+.ProductItem__title.single {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
 .ProductItem__price {
 	font-size: 0.8rem;
 	font-weight: 700;
-	margin: 0 0.5rem;
 }
 
-.ProductItem__wrapper hr {
-	margin: 1rem 0.5rem;
+.ProductItem__price.single {
+	font-size: 1rem;
+	color: rgb(215, 60, 60);
+}
+
+.ProductItem__size-table {
+	text-align: center;
 }
 
 .ProductItem__footer {

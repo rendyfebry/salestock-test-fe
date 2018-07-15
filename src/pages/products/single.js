@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row } from 'reactstrap'
 
-import ProductDetail from '../../components/products/ProductDetail'
+import ProductItem from '../../components/products/ProductItem'
 
 const productData = {
 	name: 'Elhepone Flowery Cold Shoulder Mini Dress',
@@ -12,6 +12,36 @@ const productData = {
 	images: [
 		'https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/fbd2b5a3a1e1bdbafe0a42a0c19f1509.jpg',
 	],
+	sizes: [
+		{
+			name: 'S',
+			lingkarDada: 90,
+			panjangLengan: 11,
+			panjang: 90,
+			lingkarPinggang: 94,
+		},
+		{
+			name: 'M',
+			lingkarDada: 94,
+			panjangLengan: 12,
+			panjang: 90,
+			lingkarPinggang: 98,
+		},
+		{
+			name: 'L',
+			lingkarDada: 100,
+			panjangLengan: 12,
+			panjang: 92,
+			lingkarPinggang: 106,
+		},
+		{
+			name: 'XL',
+			lingkarDada: 110,
+			panjangLengan: 13,
+			panjang: 95,
+			lingkarPinggang: 118,
+		},
+	],
 }
 
 class ProductSingle extends Component {
@@ -20,7 +50,7 @@ class ProductSingle extends Component {
 			<div className="ProductSingle">
 				<Container>
 					<Row>
-						<ProductDetail {...productData} />
+						<ProductItem {...productData} isSinglePage />
 					</Row>
 				</Container>
 			</div>
