@@ -8,11 +8,11 @@ class ProductItemFooter extends Component {
 	render() {
 		return (
 			<div className="ProductItem__footer">
-				<div className="ProductItem__footer">
+				<div className="ProductItem__footer-shareArea">
 					<img src={iconHeart} alt="Like" />
 					<span>Like</span>
 				</div>
-				<div className="ProductItem__footer">
+				<div className="ProductItem__footer-shareArea">
 					<img src={iconShare} alt="Share" />
 					<span>Share</span>
 				</div>

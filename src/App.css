@@ -32,3 +32,16 @@
 		transform: rotate(360deg);
 	}
 }
+
+.square {
+	position: relative;
+	width: 100%;
+}
+
+.square:after {
+	content: '';
+	display: block;
+	padding-bottom: 100%;
+}
+
+/* ------ */

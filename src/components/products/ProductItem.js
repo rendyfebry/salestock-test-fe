@@ -35,21 +35,29 @@ class ProductItem extends Component {
 
 	get imageSection() {
 		const ImageSection = this.props.isSinglePage ? (
-			<img
-				src={this.props.images[0]}
-				className="ProductItem__image single"
-				alt={this.props.name}
-			/>
-		) : (
-			<Link to={this.productSlug}>
-				{
+			<div className="square">
+				<div className="ProductItem__image-wrapper">
 					<img
 						src={this.props.images[0]}
-						className="ProductItem__image"
+						className="ProductItem__image single"
 						alt={this.props.name}
 					/>
-				}
-			</Link>
+				</div>
+			</div>
+		) : (
+			<div className="square">
+				<div className="ProductItem__image-wrapper">
+					<Link to={this.productSlug}>
+						{
+							<img
+								src={this.props.images[0]}
+								className="ProductItem__image"
+								alt={this.props.name}
+							/>
+						}
+					</Link>
+				</div>
+			</div>
 		)
 
 		return ImageSection
