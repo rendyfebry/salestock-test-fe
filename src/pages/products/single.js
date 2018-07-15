@@ -2,55 +2,36 @@ import React, { Component } from 'react'
 import { Container, Row } from 'reactstrap'
 
 import ProductItem from '../../components/products/ProductItem'
-
-const productData = {
-	name: 'Elhepone Flowery Cold Shoulder Mini Dress',
-	slug: 'elhepone-flowery-cold-shoulder-mini-dress',
-	price: 155000,
-	category: 'dress',
-	colors: ['Black', 'Broken White', 'Grey', 'Navy', 'Red', 'Tosca'],
-	images: [
-		'https://ss-imager-prod.freetls.fastly.net/www-images/480/product_images/fbd2b5a3a1e1bdbafe0a42a0c19f1509.jpg',
-	],
-	sizes: [
-		{
-			name: 'S',
-			lingkarDada: 90,
-			panjangLengan: 11,
-			panjang: 90,
-			lingkarPinggang: 94,
-		},
-		{
-			name: 'M',
-			lingkarDada: 94,
-			panjangLengan: 12,
-			panjang: 90,
-			lingkarPinggang: 98,
-		},
-		{
-			name: 'L',
-			lingkarDada: 100,
-			panjangLengan: 12,
-			panjang: 92,
-			lingkarPinggang: 106,
-		},
-		{
-			name: 'XL',
-			lingkarDada: 110,
-			panjangLengan: 13,
-			panjang: 95,
-			lingkarPinggang: 118,
-		},
-	],
-}
+import Product from '../../models/product'
 
 class ProductSingle extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			product: {
+				name: '',
+				slug: '',
+				price: 0,
+				images: [],
+			},
+		}
+	}
+
+	async componentDidMount() {
+		const slug = this.props.match.params.slug
+		const response = await Product.GetProductBySlug(slug)
+
+		if (response.status === 200 && response.data.error === 0) {
+			this.setState({ product: response.data.data })
+		}
+	}
+
 	render() {
 		return (
 			<div className="ProductSingle">
 				<Container>
 					<Row>
-						<ProductItem {...productData} isSinglePage />
+						<ProductItem {...this.state.product} isSinglePage />
 					</Row>
 				</Container>
 			</div>
