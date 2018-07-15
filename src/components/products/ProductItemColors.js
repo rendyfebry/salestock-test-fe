@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 const propTypes = {
-	color: PropTypes.arrayOf(PropTypes.string),
+	colors: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 class ProductItemColors extends Component {
