@@ -1,8 +1,8 @@
 import Axios from 'axios'
 
 const Product = {
-	GetAll: () => {
-		const url = `/api/products`
+	GetAll: (page = 1, perPage = 6, sort = 'newest') => {
+		const url = `/api/products?page=${page}&perPage=${perPage}&sort=${sort}`
 
 		return Axios.get(url)
 	},

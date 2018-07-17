@@ -11,6 +11,9 @@ class Products extends Component {
 		this.state = {
 			products: [],
 			isOnLoad: true,
+			page: 1,
+			perPage: 6,
+			sort: 'newest',
 		}
 	}
 
@@ -31,7 +34,7 @@ class Products extends Component {
 	}
 
 	async componentDidMount() {
-		const response = await Product.GetAll()
+		const response = await Product.GetAll(this.state.page, this.state.perPage, this.state.sort)
 
 		if (response.status === 200 && response.data.error === 0) {
 			this.setState({ products: response.data.data })
