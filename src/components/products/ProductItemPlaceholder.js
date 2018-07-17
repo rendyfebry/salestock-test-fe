@@ -49,7 +49,7 @@ class ProductItemPlaceholder extends Component {
 
 	render() {
 		return (
-			<Col xs={12} md={this.props.isSinglePage ? { size: 6, offset: 3 } : 4}>
+			<Col xs={12} md={{ size: 6, offset: 3 }}>
 				<div className="ProductItem__wrapper">
 					<div className="square">
 						<div className="ProductItem__image-wrapper" />

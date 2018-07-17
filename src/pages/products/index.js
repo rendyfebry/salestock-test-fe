@@ -21,7 +21,7 @@ class Products extends Component {
 		if (this.state.isOnLoad) {
 			const dummyList = []
 
-			for (let i = 0; i < 6; i++) {
+			for (let i = 0; i < 3; i++) {
 				dummyList.push(<ProductItemPlaceholder key={i} />)
 			}
 			return dummyList
